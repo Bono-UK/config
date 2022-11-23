@@ -1,3 +1,7 @@
+" https://github.com/easysid/mod8.vim/tree/master
+"the bast theme (origenal one dark pro
+
+
 set mouse=a  " enable mouse
 set encoding=utf-8
 set number
