@@ -53,18 +53,18 @@
 	default_border pixel 1
 
 #РАЗМЕР РАМОК
-	for_window [tiling] border pixel 2
+	for_window [tiling] border pixel 0
 
 #ОТКЛЮЧЕНИЕ РАМКИ КОГДА ОТКРЫТО ОДНО ОКНО
 	smart_borders on
 
 #ЦВЕТА РАМОК
 	#                       Рамка   Фон   Индикатор Родительская_рамка
-	client.focused			#ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
-	client.focused_inactive		#ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
-#	client.unfocused		#ebdbb2 #bedbb2 #ebdbb2 #ebdbb2
-	#client.urgent			#ebdbb2 #bedbb2 #ebdbb2 #ebdbb2
-	#client.placeholder		#ebdbb2 #b3dbd2 #ebdbb2 #ebdbb2
+	client.focused			#535d6c #535d6c #535d6c #535d6c
+	client.focused_inactive		#d1d9ec #d1d9ec #d1d9ec #d1d9ec
+	client.unfocused		#d1d9ec #d1d9ec #d1d9ec #d1d9ec
+	client.urgent			#d1d9ec #d1d9ec #d1d9ec #d1d9ec
+	client.placeholder		#d1d9ec #d1d9ec #d1d9ec #d1d9ec
 
 	#client.focused — окно в фокусе
 	#client.unfocused — окно вне фокуса
@@ -75,9 +75,9 @@
 	font pango:Roboto 14
 
 #ОБОИ
-	output * bg /home/bono/Pictures/retro_gruvbox_linux_wallpaper.svg fill
+	#output * bg /home/bono/Pictures/retro_gruvbox_linux_wallpaper.svg fill
 #	output * bg /home/bono/Pictures/gruvbox_arch.svg fill
-        #output * bg /home/bono/Pictures/switch_wallpaper.jpg fill
+        output * bg /home/bono/Pictures/switch_wallpaper.jpg fill
 
 
 
@@ -85,18 +85,15 @@
 	#   output HDMI-A-1 resolution 1920x1080 position 1920,0
 	#   посмотреть доступные устройства и разрешения: swaymsg -t get_outputs
 
-	#workspace 1 output HEMI-A-1
-
-
-
 
 #СКРИНШОТЫ
-        #bindsym Print exec grim ~/screen-"$(date +%s)".png
-	#bindsym $mod+Alt+x exec grim -g "$(slurp)" ~/screen-"$(date +%s)".png
-bindsym $mod+Alt+x exec grim
+	bindsym Print exec grim ~/screen-"$(date +%s)".png
+	bindsym $mod+Print exec grim -g "$(slurp)" ~/screen-"$(date +%s)".png
+
+
 #ВЫВОД ОПРЕДЕЛЕННОГО ВОРКСПЕЙСА НА ОПРЕДЕЛЕННЫЙ МОНИТОР
-	 workspace 1 output HDMI-A-1
-	 workspace 2 output HDMI-A-2
+	# workspace 1 output HDMI-A-1
+	# workspace 2 output HDMI-A-2
 
 #БЛОКИРОВКА ЭКРАНА:
 	# exec swayidle -w \
@@ -121,8 +118,7 @@ bindsym $mod+Alt+x exec grim
     bindsym $mod+tab exec $term
     bindsym $mod+u exec firefox
     bindsym $mod+t exec code
-    bindsym $mod+i exec color-picear
-
+    bindsym $mod+i exec telegram-desktop
 
     #ЗАКРЫТЬ ОКНО
     bindsym $mod+q kill
